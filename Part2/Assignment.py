@@ -53,7 +53,7 @@ maxIter = 100  # only used for IEKF
 N = len(u_k)
 z_storage = np.zeros([np.size(u_k, axis=0), np.size(u_k, axis=1)])
 x_storage = np.zeros([np.size(u_k, axis=0), np.size(x_00, axis=0)])  # u_k[0] = 10001, u_k[1] = 3, x_00[1] = 4
-stdx_storage = x_storage
+stdx_storage = np.zeros([np.size(u_k, axis=0), np.size(x_00, axis=0)])  # u_k[0] = 10001, u_k[1] = 3, x_00[1] = 4
 iteration_counter = []
 
 # Check observability of state
@@ -106,11 +106,10 @@ for k in range(N):
     z_storage[k,:] = z_k1k1[:,0]
     for i in range(len(x_k1k1)):
         stdx_storage[k, i] = P_k1k1[i, i]
-    break
 print(x_k1k1[:,0],'\n')
 print(x_storage[k,:])
 breakpoint
-mplt.plot(range(N),x_storage[:,0],'r',range(N),x_storage[:,2],'g',range(N),x_storage[:,1],'b',range(N),x_storage[:,0],'y')
+mplt.plot(range(N),x_storage[:,0],'r',range(N),x_storage[:,2],'g',range(N),x_storage[:,1],'b',range(N),x_storage[:,3],'y')
 mplt.title('state variables')
 mplt.show()
 mplt.plot(range(N),z_k[:,2],'r',range(N),z_storage[:,2],'b')
