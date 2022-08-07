@@ -6,10 +6,10 @@ Contains:
   - combinator (creates combinations of two vectors, rather inefficiently)
 
 And straighforward neural net implementations:
-- ErrCor RBF
-- FF
+- ErrCor RBF (works, LM doesn't)
+- FF (LM doesn't)
 
 tbc.
 
-Don't expect good code, but it works :/
+Don't expect good code, but it (mostly) works :/
 - Karlo
