@@ -4,6 +4,7 @@ Contains:
 - IE kalman filter
 - ordinary linear regressor
   - combinator (creates combinations of two vectors, rather inefficiently)
+
 And straighforward neural net implementations:
 - ErrCor RBF
 - FF
